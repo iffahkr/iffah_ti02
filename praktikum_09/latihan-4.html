@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Javascript 4</title>
+</head>
+<body>
+    <h2>Menghitung Jumlah Dua Bilangan</h2>
+    <br>
+    <form>
+        <input type="text" placeholder="Masukkan angka" id="angka1">
+        <p><bigger>+</bigger></p>
+        <input type="text" placeholder="Masukkan angka" id="angka2">
+        <br> <br>
+        <input type="button" value="=" id="jumlah" onclick="hitung_jumlah()">
+        <br> <br>
+        <input type="text" placeholder="Hasil" id="hasil">
+    </form>
+
+    <!-- Kode Javascript -->
+    <script>
+        function hitung_jumlah() {
+            var a1 = document.getElementById('angka1').value;
+            var a2 = document.getElementById('angka2').value;
+
+            document.getElementById('hasil').value = (parseInt(a1) + parseInt(a2));
+        }
+    </script>
+</body>
+</html>
