@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum 10.2</title>
+
+    <style>
+        fieldset {
+            background-color: rgb(217, 241, 255);
+        }
+
+        table, th, td {
+            border: 1px solid;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Kurs Rupiah - Mata Uang Asing</legend>
+            <table>
+                <thead>
+                    <th>Masukkan Nilai</th>
+                    <th>Valas</th>
+                    <th>Nilai Rupiah</th>
+                </thead>
+                <tbody>
+                    <td>
+                        <input type="number" id="uang" onchange="kurs()">
+                    </td>
+                    <td>
+                        <select name="" id="pilihan" onchange="kurs()">
+                            <option value="" hidden>---Pilih---</option>
+                            <option value="usd">Dollar US</option>
+                            <option value="sd">Dollar Singapore</option>
+                            <option value="rm">Ringgit Malaysia</option>
+                            <option value="yen">Yen Jepang</option>
+                            <option value="eu">Euro</option>
+                            <option value="riyal">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" id="konversi">
+                    </td>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        function kurs() {
+            let inputUang = document.getElementById('uang').value;
+            const mataUang = document.getElementById('pilihan').value;
+            let hasilKonversi;
+        
+            if (mataUang == "usd") {
+                hasilKonversi = inputUang * 9915;
+                document.getElementById('konversi').value = hasilKonversi;
+            } else if (mataUang == "sd") {
+                hasilKonversi = inputUang * 13472;
+                document.getElementById('konversi').value = hasilKonversi;
+            } else if (mataUang == "rm") {
+                hasilKonversi = inputUang * 874;
+                document.getElementById('konversi').value = hasilKonversi;
+            } else if (mataUang == "yen") {
+                hasilKonversi = inputUang * 120;
+                document.getElementById('konversi').value = hasilKonversi;
+            } else if (mataUang == "eu") {
+                hasilKonversi = inputUang * 15888;
+                document.getElementById('konversi').value = hasilKonversi;
+            } else if (mataUang == "riyal") {
+                hasilKonversi = inputUang * 3592;
+                document.getElementById('konversi').value = hasilKonversi;
+            } else {
+                hasilKonversi = "Anda belum memilih";
+                document.getElementById('konversi').value = hasilKonversi;
+            }
+        }
+    </script>
+</body>
+</html>

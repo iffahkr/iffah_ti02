@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum 10.3</title>
+
+    <style>
+        .container {
+            border: 1px solid black;
+            height: 32%;
+            width: 20%;
+            position: fixed;
+            left: 70%;
+            top: 65%;
+        }
+
+        .input {
+            width: 95%;
+        }
+
+        .chat {
+            width: 100%;
+            height: 200px;
+            background-color: beige;
+        }
+
+        .message {
+            display: flex;
+        }
+
+        button {
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chat" id="messageUser"></div>
+        <div class="message">
+            <input type="text" class="input" id="inputChat" onfocus="this.value=''">
+            <button onclick="chat()">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        function chat() {
+            let elemen, teks, parent, spasi;
+            let inputChat = document.getElementById('inputChat').value;
+            elemen = document.createElement('span');
+            spasi = document.createElement('br');
+            teks = document.createTextNode(inputChat);
+
+            elemen.appendChild(teks);
+
+            parent = document.getElementById('messageUser');
+            parent.appendChild(spasi);
+            parent.appendChild(elemen);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum 10.4</title>
+</head>
+<body>
+    <form>
+        <select name="selectImage" id="selectImage" style="width:10%;" onchange="gambar()">
+            <option value="hidden">---Pilih hewan---</option>
+            <option value="singa" id="singa">Singa</option>
+            <option value="gorila" id="gorila">Gorila</option>
+            <option value="elang" id="elang">Elang</option>
+        </select>
+    </form>
+    <br>
+    <img alt="gambar" id="image" width="30%">
+
+    <script>
+        function gambar() {
+            let selectImage = document.getElementById('selectImage').value;
+            let image = document.getElementById('image');
+
+            if (selectImage == "singa") {
+                image.setAttribute(
+                    "src", 
+                    "singa.jpg"
+                );
+                alert("Ini adalah gambar singa.jpg")
+            } else if (selectImage == "gorila") {
+                image.setAttribute(
+                    "src",
+                    "gorila.jpg"
+                );
+                alert("Ini adalah gambar gorila.jpg")
+            } else if (selectImage == "elang") {
+                image.setAttribute(
+                    "src",
+                    "elang.jpg"
+                );
+                alert("Ini adalah gambar elang.jpg")
+            }
+        }
+    </script>
+</body>
+</html>

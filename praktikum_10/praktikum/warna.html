@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 10.3</title>
+</head>
+<body>
+    <input type="button" value="Ubah Warna" id="ubah">
+
+    <script>
+        let buttonUbah = document.getElementById('ubah');
+
+        buttonUbah.addEventListener('click', function(){
+            let colors = ['blue', 'red', 'green', 'cyan', 'pink', 'yellow', 'beige', 'purple', 'brown', 'salmon']
+            let random = Math.round(Math.random() * 10)
+            console.log(random)
+            document.getElementsByTagName('body')[0].style = `background-color: ${colors[random]}`
+        })
+    </script>
+</body>
+</html>

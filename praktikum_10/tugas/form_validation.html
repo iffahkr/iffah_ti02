@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum 10.5</title>
+</head>
+<body>
+    <form action="" id="validation">
+        <fieldset style="width: 40%;">
+            <label for="nama">Nama Pelanggan : </label>
+            <input type="text" name="" id="nama" required size="30" maxlength="30">
+            <br> <br>
+            <label for="">Email : </label>
+            <input type="email" id="email" required>
+            <br> <br>
+            <label for="">Jam Keberangkatan : </label>
+            <input type="time" id="jam" required>
+            <br> <br>
+            <label for="">Tujuan Keberangkatan : </label>
+            <input type="text" id="tujuan" required>
+            <br> <br>
+            <label for="">Jumlah Tiket : </label>
+            <input type="number" name="" id="tiket" style="width: 8%;" min="1" max="10">
+        </fieldset>
+    </form>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum 10.5</title>
+    <style media="screen">
+      input{
+        width:35%;
+        height: 25px;
+        margin: 1em;
+      }
+      label{
+        font-size: 20px;
+      }
+      fieldset{
+        background-color: olive;
+        width: 50%;
+        height: 50%;
+      }
+      .container{
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      #hapus{
+        width: 30%;
+        height: 25px;
+        margin-top: 2em;
+        background-color: lemonchiffon;
+      }
+    </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Form Validasi</h1>
+  
+    <fieldset>
+            <div class="container">
+                <form action="" name="formPendaftaran" method="post" onsubmit="validateform()">
+                        <div class="nama">
+                            <label for="nama">Nama</label><br>
+                            <input type="text" name="nama" placeholder="Nama anda" required maxlength="30" id="nama"><br>
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label><br>
+                            <input type="email" name="email" placeholder="Email aktif" required id="email"><br>
+                        </div>
+                        <div class="jam">
+                            <label for="jamkeberangkatan">Jam Keberangkatan</label><br>
+                            <input type="number" name="jamkeberangkatan" placeholder="Jam keberangkatan" required id="jam"><br>
+                        </div>
+                       <div class="tujuans">
+                           <label for="tujuan">Tujuan Keberangkatan</label><br>
+                           <input type="text" name="tujuan" placeholder="Tujuan Keberangkatan" required id="tujuan"><br>
+                       </div>
+                       <div class="jmltikets">
+                          <label for="jumlahtiket">Jumlah Tiket</label><br>
+                          <input type="number" name="jumlahtiket" placeholder="Jumlah tiket" required max="10" id="jmltiket"><br>
+                       </div>
+                       <div class="klik">
+                        <button type="submit" onclick="diKlik()">Daftar</button id="klikks"><span id="hasil"></span>
+                       </div>
+                </form>
+            </div>
+    </fieldset>
+    <button class="reset" type="reset" id="hapus" onclick="hapus()"><img src="" alt=""></button>
+
+   <script>
+    function validateform(){
+        if(document.forms["formpendaftaran"]["nama"].value == ""){
+            alert("nama tidak boleh kosong");
+            document.forms["formpendaftaran"]["nama"].focus();
+            return false;
+        }
+        if(document.forms["formpendaftaran"]["email"].value == ""){
+            alert("nama tidak boleh kosong");
+            document.forms["formpendaftaran"]["email"].focus();
+            return false;
+        }
+        if(document.forms["formpendaftaran"]["jamkeberangkatan"].value == ""){
+            alert("nama tidak boleh kosong");
+            document.forms["formpendaftaran"]["jamkeberangkatan"].focus();
+            return false;
+        }
+        if(document.forms["formpendaftaran"]["tujuan"].value == ""){
+            alert("nama tidak boleh kosong");
+            document.forms["formpendaftaran"]["tujuan"].focus();
+            return false;
+        }
+        if(document.forms["formpendaftaran"]["jumlahtiket"].value == ""){
+            alert("nama tidak boleh kosong");
+            document.forms["formpendaftaran"]["jumlahtiket"].focus();
+            return false;
+        }
+    }
+
+    function diKlik(){
+            let namaPelanggan = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let jamber = document.getElementById("jam").value;
+            let tujuan = document.getElementById("tujuan").value;
+            let jmlTiket = document.getElementById("jmltiket").value;
+
+            console.log("Nama:" + namaPelanggan);
+            console.log("Email:" + email);
+            console.log("Jam Keberangkatan :" + jamber);
+            console.log("Tujuan Keberangkatan :" + tujuan);
+            console.log("Jumlah Tiket: " + jmlTiket);
+
+            document.getElementById("hasil").innerHTML = ( "<br>" +"Nama       : " + namaPelanggan + "<br>" +"Email:" + email + "<br>"+ "Jam Keberangkatan:" + jamber + "<br>" + "Tujuan Keberangkatan: " + tujuan + "<br>" + "Jumlah Tiket: " + jmlTiket);
+
+    }
+    function hapus(){
+          document.getElementById("formPendaftaran").reset();
+    }
+   </script>
+</body>
+</html>
