@@ -13,5 +13,4 @@ Latihan dan Praktikum Pemrograman Web 1 (Completed)
 - Praktikum 10
 - Praktikum 11
 - Praktikum 12
-- Praktikum 13
 - Final Project Landing Page Fitness
